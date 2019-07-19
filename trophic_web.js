@@ -59,7 +59,7 @@ var svg = s.append("g")
 var tooltip = d3.select("#tooltipDiv");
 var tooltipSvg = d3.select("#tooltipSvg");
     
-var zoom = d3.zoom().scaleExtent([1, 3])
+var zoom = d3.zoom().scaleExtent([0, 3])
 		.on("zoom", function() {
 		svg.attr("transform", d3.event.transform);});
 		
@@ -180,6 +180,7 @@ var simulation = d3.forceSimulation()
 var eol_id = "328447";
 //initialize first graph
 initializeGraph(eol_id);
+zoom.scaleBy(s.transition().duration(100), 0.9);
 
 
 	
